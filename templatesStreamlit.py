@@ -30,14 +30,14 @@ css = '''
 }
 
 .skill {
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(0, 0, 0);
     padding: 1rem 2rem;
     border-radius: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.5);
     transition: .3s;
 }
 
@@ -48,7 +48,7 @@ css = '''
 .skill-content {
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 100%;
 }
 
 .skill-img-box {
@@ -86,7 +86,17 @@ css = '''
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #ffffffc7;
+    transition: width 1s ease; /* Transición de la anchura durante 1 segundo con efecto de suavizado */
+}
+
+.progress-1 {
+    width: 0%;
+}
+
+/* Pseudo-clase hover para demostrar la animación */
+.skill-progress:hover .progress-1 {
+    width: 100%;
 }
 
 
@@ -126,11 +136,13 @@ css = '''
 .human-bubble {
     background: linear-gradient(135deg, rgb(0, 178, 255) 0%, rgb(0, 106, 255) 100%); 
     color: white;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .chat-icon {
-    border-radius: 5px;
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    border-radius: 50px;
 }
 
 .container-neon {
@@ -147,7 +159,7 @@ css = '''
     color: #fff;
     letter-spacing: 4px;
     text-decoration: none;
-    font-size: 44px;
+    font-size: 48px;
     overflow: hidden;
     border-radius: 15px;
     # background: #a945c7;
@@ -158,25 +170,18 @@ css = '''
 
 .icon img {
     margin-right: 1px; /* Ajusta el espacio entre la imagen y el texto según tus necesidades */
-    width: 30px; /* Ajusta el ancho de la imagen según tus necesidades */
-    height: 30px; /* Ajusta la altura de la imagen según tus necesidades */
+    width: 50px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: 50px; /* Ajusta la altura de la imagen según tus necesidades */
 }
 
 
 '''
 
-bot_template = '''
-<div class="chat-message bot">
-    <div class="avatar">
-        <img src="https://i.ibb.co/cN0nmSj/Screenshot-2023-05-28-at-02-37-21.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
-    </div>
-    <div class="message">{{MSG}}</div>
-</div>
-'''
+
 bot_template2 = '''
 
 <div class="chat-row">
-    <img class="chat-icon" src="https://i.ibb.co/cN0nmSj/Screenshot-2023-05-28-at-02-37-21.png" width=45 height=45>
+    <img class="chat-icon" src="https://github.com/manolito99/DataScienceLLM/blob/main/static/bot.png?raw=true" width=45 height=45>
     <div class="chat-bubble ai-bubble">
         &#8203;{{MSG}}
     </div>
@@ -186,7 +191,7 @@ bot_template2 = '''
 user_template2 = '''
 
 <div class="chat-row row-reverse">
-    <img class="chat-icon" src="https://i.ibb.co/rdZC7LZ/Photo-logo-1.png" width=45 height=45>
+    <img class="chat-icon" src="https://github.com/manolito99/DataScienceLLM/blob/main/static/user.png?raw=true" width=45 height=45>
     <div class="chat-bubble human-bubble">
         &#8203;{{MSG}}
     </div>
@@ -194,13 +199,3 @@ user_template2 = '''
 
 '''
 
-
-
-user_template = '''
-<div class="chat-message user">
-    <div class="avatar">
-        <img src="https://i.ibb.co/rdZC7LZ/Photo-logo-1.png">
-    </div>    
-    <div class="message">{{MSG}}</div>
-</div>
-'''
