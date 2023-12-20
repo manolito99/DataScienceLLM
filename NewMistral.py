@@ -69,15 +69,16 @@ def handle_userinput(user_question):
 
 
 def main():
+    url_logo = "https://github.com/manolito99/DataScienceLLM/blob/main/static/logo_alternativo.png?raw=true"
     st.set_page_config(page_title="LLM-RAG",
-                       page_icon=":books:")
+                       page_icon=url_logo)
     st.write(css, unsafe_allow_html=True)
 
     titulo = f"""
      <div class="btn-neon">
-       <span class="icon"><img src=static/Mistral.png></span>
+       <span class="icon"><img src=https://github.com/manolito99/DataScienceLLM/blob/main/static/Mistral.png?raw=true></span>
         Mistral7b + Streamlit
-        <span class="icon"><img src=static/streamlit.png></span>
+        <span class="icon"><img src=https://github.com/manolito99/DataScienceLLM/blob/main/static/streamlit.png?raw=true></span>
      </div>
     """
     st.markdown(titulo, unsafe_allow_html=True)
@@ -91,14 +92,13 @@ def main():
                         </a>                    
                     </div>
                     <div class="skill-detail">
-                        <h2 class="skill-title">Manuel Otero</h2>
-                        <p>211 Days</p>
+                        <h2 class="skill-title">By Manuel Otero Márquez </h2>
+                        <p>Esto es un ejemplo de como se pueden implementar LLM de forma local y con CPU</p>
                         <div class="skill-progress">
                             <div class="progress progress-1"></div>
                         </div>
                     </div>
                 </div>
-                <h2 class="percent">60%</h2>
             </div>
 """
     st.markdown(presentacion, unsafe_allow_html=True)
